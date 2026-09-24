@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#e5e7dc"><meta name="description" content="Een stil plekje aan het water.">
+  <meta name="referrer" content="no-referrer">
+  <title>Aan de oever</title><link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header><a class="wordmark" href="./" aria-label="Aan de oever, begin">aan de oever<span class="mark" aria-hidden="true">≈</span></a><button id="settingsButton" class="quiet" aria-label="Instellingen openen">Instellingen</button></header>
+    <section class="intro" aria-label="Welkom"><p id="dedication">Een plekje voor jou</p><h1>Aan de oever.</h1></section>
+    <div class="landscape" aria-hidden="true">
+      <svg viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#dae1d7"/><stop offset="1" stop-color="#f1ead6"/></linearGradient>
+          <linearGradient id="lake" x2="0" y2="1"><stop stop-color="#b9cbc0"/><stop offset=".55" stop-color="#8eafa3"/><stop offset="1" stop-color="#7a9e93"/></linearGradient>
+          <linearGradient id="light" x2="0" y2="1"><stop stop-color="#efead4" stop-opacity=".4"/><stop offset="1" stop-color="#efead4" stop-opacity="0"/></linearGradient>
+          <filter id="blur"><feGaussianBlur stdDeviation="20"/></filter>
+        </defs>
+        <rect width="1600" height="1000" fill="url(#sky)"/>
+        <circle cx="1070" cy="308" r="62" fill="#f2eed9" opacity=".75"/>
+        <path d="M0 486 Q175 397 319 440 T630 448 T940 458 T1220 404 T1600 456 V630 H0Z" fill="#becbc0"/>
+        <path d="M0 482 Q120 501 248 488 T520 495 Q750 510 1030 490 T1600 482 V1000 H0Z" fill="url(#lake)"/>
+        <path d="M950 492 L1160 492 L1360 980 L670 980Z" fill="url(#light)" filter="url(#blur)"/>
+        <path d="M0 439 Q126 448 234 492 Q350 526 520 523 Q240 553 0 535Z" fill="#789283"/>
+        <path d="M1600 430 Q1460 476 1350 483 Q1285 489 1160 512 Q1380 510 1600 524Z" fill="#8fa798"/>
+        <g class="ripples" fill="none" stroke="#dce4d5" stroke-linecap="round" opacity=".3">
+          <path d="M670 552h120m145 0h155M510 593h184m160 0h195M758 640h278M347 696h154m261 0h380M574 758h270M984 810h204M267 852h185m182 0h240"/>
+        </g>
+        <path d="M0 1000V893 Q132 851 259 926 Q390 917 498 1000Z" fill="#566d5c"/>
+        <path d="M1600 1000V910 Q1457 858 1330 1000Z" fill="#677e68"/>
+        <g fill="none" stroke="#546b59" stroke-width="3" stroke-linecap="round"><path d="M119 957Q105 817 72 755M149 965Q145 845 165 777M136 960Q125 807 128 738M1475 1000Q1482 871 1520 805M1510 1000Q1536 899 1570 873"/></g>
+        <g fill="#64745b"><ellipse cx="72" cy="758" rx="5" ry="24" transform="rotate(-18 72 758)"/><ellipse cx="128" cy="738" rx="4" ry="22"/><ellipse cx="165" cy="780" rx="4" ry="20" transform="rotate(10 165 780)"/></g>
+      </svg>
+    </div>
+    <nav class="dock" aria-label="Aan de oever"><button id="restButton" class="primary"><span aria-hidden="true">◯</span> Alleen het water</button><button id="noteButton"><span aria-hidden="true">▱</span> Iets neerleggen</button><button id="soundButton" aria-pressed="false"><span aria-hidden="true">≈</span> Geruis aan</button></nav>
+    <footer><button id="giftButton" class="quiet">Een gebaar van Marcel</button></footer>
+    <button id="returnButton" hidden>Terug</button>
+  </main>
+  <dialog id="noteDialog" aria-labelledby="noteTitle"><form method="dialog"><button class="close" aria-label="Sluiten">×</button></form><h2 id="noteTitle">Even neerleggen</h2><label for="note">Wat zit er in je hoofd?</label><textarea id="note" rows="5" maxlength="10000" placeholder="Schrijf hier wat je wilt…" spellcheck="false" autocomplete="off"></textarea><p class="small">Dit briefje blijft alleen op dit scherm. Bij vernieuwen of sluiten verdwijnt het.</p><div class="actions"><button id="foldButton" class="primary">Briefje dichtvouwen</button><button id="clearButton" class="quiet">Wissen</button></div></dialog>
+  <dialog id="settingsDialog" aria-labelledby="settingsTitle"><form method="dialog"><button class="close" aria-label="Sluiten">×</button></form><h2 id="settingsTitle">Instellingen</h2><div class="setting"><label for="dim">Gedimd beeld</label><input id="dim" type="checkbox" role="switch"></div><div class="setting"><label for="motion">Langzame beweging</label><input id="motion" type="checkbox" role="switch"></div><div class="setting volume"><label for="volume">Volume geruis</label><input id="volume" type="range" min="0" max="50" value="12"></div><p class="small">Geluid en beweging staan bij het openen altijd uit. Geruis stopt als je naar een ander tabblad of een andere app gaat.</p></dialog>
+  <dialog id="giftDialog" aria-labelledby="giftTitle"><form method="dialog"><button class="close" aria-label="Sluiten">×</button></form><p class="eyebrow">Van Marcel</p><h2 id="giftTitle">Voor jou</h2><p>Ik had je een rustig plekje beloofd. Dit is het geworden.</p><p>Je hoeft hier niets af te maken. En je hoeft mij ook niet te laten weten of je het gebruikt.</p><p class="signature">Marcel</p><hr><p class="small">Geen account, statistieken of berichten. Je briefje wordt niet door deze app opgeslagen of verstuurd. De hostingdienst ontvangt wel gewone bezoekgegevens, zoals je IP-adres.</p></dialog>
+  <p id="status" class="sr-only" role="status"></p>
+  <script src="app.js"></script>
+</body>
+</html>
