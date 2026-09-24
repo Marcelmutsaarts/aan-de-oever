@@ -7,12 +7,12 @@ function openDialog(id) { $(id).showModal(); }
 $('settingsButton').onclick = () => openDialog('settingsDialog');
 $('giftButton').onclick = () => openDialog('giftDialog');
 $('noteButton').onclick = () => openDialog('noteDialog');
-$('foldButton').onclick = () => {
-  $('noteDialog').close();
+$('foldButton').onclick = () => $('noteDialog').close();
+$('noteDialog').addEventListener('close', () => {
   $('noteButton').innerHTML = $('note').value.trim() ? '<span aria-hidden="true">▱</span> Mijn briefje' : '<span aria-hidden="true">▱</span> Iets neerleggen';
   $('status').textContent = $('note').value.trim() ? 'Je briefje is dichtgevouwen. Je kunt het weer openen.' : '';
-};
-$('clearButton').onclick = () => { $('note').value = ''; $('noteButton').innerHTML = '<span aria-hidden="true">▱</span> Iets neerleggen'; $('note').focus(); };
+});
+$('clearButton').onclick = () => { $('note').value = ''; $('status').textContent=''; $('noteButton').innerHTML = '<span aria-hidden="true">▱</span> Iets neerleggen'; $('note').focus(); };
 function rest(value) { document.body.classList.toggle('rest',value); $('returnButton').hidden = !value; (value ? $('returnButton') : $('restButton')).focus(); }
 $('restButton').onclick = () => rest(true);
 $('returnButton').onclick = () => rest(false);
